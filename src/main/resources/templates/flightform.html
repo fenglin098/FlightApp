@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Flight Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div th:replace="base :: navlinks"></div>
+
+<div class="jumbotron">
+    <h1 class="text-center">Flight Form</h1>
+    <br/>
+    <form action="/process" th:object="${flight}" method="post" enctype="multipart/form-data">
+        <input type="hidden" th:field="*{id}" />
+        <input type="hidden" th:field="*{picture}" />
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+                One-way
+            </label>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <label for="exampleFormControlInput">Depart</label>
+                <input type="text" class="form-control" id="exampleFormControlInput" th:field="*{departingAirport}" />
+                <span th:if="${#fields.hasErrors('departingAirport')}"
+                      th:errors="*{departingAirport}"></span>
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput">Arrive</label>
+                <input type="text" class="form-control" th:field="*{arrivingAirport}" />
+                <span th:if="${#fields.hasErrors('arrivingAirport')}"
+                      th:errors="*{arrivingAirport}"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <label for="exampleFormControlInput1">Price</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" th:field="*{price}" />
+                <span th:if="${#fields.hasErrors('price')}"
+                      th:errors="*{price}"></span><br/>
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput1">Date</label>
+                <input type="date" class="form-control" th:field="*{date}" />
+                <span th:if="${#fields.hasErrors('date')}"
+                      th:errors="*{date}"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+            <label for="exampleFormControlInput2">Flight Number</label>
+            <input type="text" class="form-control" id="exampleFormControlInput2" th:field="*{flightNumber}" />
+            <span th:if="${#fields.hasErrors('flightNumber')}"
+                  th:errors="*{flightNumber}"></span>
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput2">Airline</label>
+                <input type="text" class="form-control" th:field="*{airline}" />
+                <span th:if="${#fields.hasErrors('airline')}"
+                      th:errors="*{airline}"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <input type="file" name="file" />
+            </div>
+            <div class="col">
+                <input type="submit" value="Submit" />
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
