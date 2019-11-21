@@ -10,20 +10,28 @@
 <body>
 <div th:replace="base :: navlinks"></div>
 <h1>All Flights</h1>
-<a href="/add">Add a New Flight</a><br/>
+
+
 <div th:each="flight : ${flights}">
-    <div th:if="${flight.picture}!=null">
-        <img th:src="${flight.picture}" /><hr/>
+    <div class="cardlist" style="width: 25rem;">
+        <div th:if="${flight.picture}!=null">
+            <img th:src="${flight.picture}" class="card-img-top"/>
+            <div class="card-body">
+                <h5 class="card-title"><span th:text="${flight.arrivingAirport}"></span></h5>
+                <p class="card-text">
+                            Departing Airport :<span th:text="${flight.departingAirport}"></span><br/>
+                            Arriving Airport :<span th:text="${flight.arrivingAirport}"></span><br/>
+                            Price: <span th:text="${flight.price}"></span><br/>
+                            Departure Date: <span th:text="${flight.date}"></span><br/>
+                            Flight Number: <span th:text="${flight.flightNumber}"></span><br/>
+                            Airline: <span th:text="${flight.airline}"></span><br/>
+                </p>
+                <a th:href="@{/update/{id}(id=${flight.id})}" class="btn btn-outline-secondary">Update</a>
+                <a th:href="@{/detail/{id}(id=${flight.id})}" class="btn btn-outline-secondary">Details</a>
+                <a th:href="@{/delete/{id}(id=${flight.id})}" class="btn btn-outline-secondary">Delete</a>
+            </div>
+        </div>
     </div>
-    Departing Airport :<span th:text="${flight.departingAirport}"></span><br/>
-    Arriving Airport :<span th:text="${flight.arrivingAirport}"></span><br/>
-    Price: <span th:text="${flight.price}"></span><br/>
-    Departure Date: <span th:text="${flight.date}"></span><br/>
-    Flight Number: <span th:text="${flight.flightNumber}"></span><br/>
-    Airline: <span th:text="${flight.airline}"></span><br/>
-    <a th:href="@{/update/{id}(id=${flight.id})}">Update</a>
-    <a th:href="@{/detail/{id}(id=${flight.id})}">Details</a>
-    <a th:href="@{/delete/{id}(id=${flight.id})}">Delete</a>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
