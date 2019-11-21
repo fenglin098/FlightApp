@@ -20,6 +20,11 @@ public class HomeController {
     @Autowired
     CloudinaryConfig cloudc;
 
+    @RequestMapping("/home")
+    public String home(){
+        return "home";
+    }
+
     @RequestMapping("/")
     public String listFlights(Model model){
         model.addAttribute("flights", flightRepository.findAll());

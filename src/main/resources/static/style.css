@@ -1,17 +1,33 @@
-/*body {*/
-/*    background: url(https://res.cloudinary.com/dw2hl1oiq/image/upload/v1570917714/background_h5prjy.jpg) no-repeat center center fixed;*/
-/*    -webkit-background-size: cover;*/
-/*    -moz-background-size: cover;*/
-/*    -o-background-size: cover;*/
-/*    background-size: cover;*/
-/*}*/
+body {
+    background: url(https://www.foundationrecruitment.com/wp-content/uploads/2018/08/shutterstock_airport-uk-developmens.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 .jumbotron {
     background-size: cover;
     margin: 70px;
 }
 
-.card-list {
-    padding-left: 20em;
-    padding-right: 20em;
+.blockquote {
+    font-size: 20px;
+    font-weight: 400;
+    opacity: 50%
+}
+
+.container-home {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

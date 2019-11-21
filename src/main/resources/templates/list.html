@@ -12,13 +12,37 @@
 <h1>All Flights</h1>
 
 
+<!--    <div class="card">-->
+<!--        <div class="card-header" id="headingOne">-->
+<!--            <h2 class="mb-0">-->
+<!--                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+<!--                    <span th:text="${flight.arrivingAirport}"></span>-->
+<!--                </button>-->
+<!--            </h2>-->
+<!--        </div>-->
+
+<!--        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">-->
+<!--            <div class="card-body">-->
+<!--                Departing Airport :<span th:text="${flight.departingAirport}"></span><br/>-->
+<!--                Arriving Airport :<span th:text="${flight.arrivingAirport}"></span><br/>-->
+<!--                Price: <span th:text="${flight.price}"></span><br/>-->
+<!--                Departure Date: <span th:text="${flight.date}"></span><br/>-->
+<!--                Flight Number: <span th:text="${flight.flightNumber}"></span><br/>-->
+<!--                Airline: <span th:text="${flight.airline}"></span><br/>-->
+<!--                <a th:href="@{/update/{id}(id=${flight.id})}" class="btn btn-outline-secondary">Update</a>-->
+<!--                <a th:href="@{/detail/{id}(id=${flight.id})}" class="btn btn-outline-secondary">Details</a>-->
+<!--                <a th:href="@{/delete/{id}(id=${flight.id})}" class="btn btn-outline-secondary">Delete</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 <div th:each="flight : ${flights}">
-    <div class="cardlist" style="width: 25rem;">
+    <div class="accordion" id="accordionExample">
+    <div class="card" style="width: 25rem;">
         <div th:if="${flight.picture}!=null">
             <img th:src="${flight.picture}" class="card-img-top"/>
             <div class="card-body">
-                <h5 class="card-title"><span th:text="${flight.arrivingAirport}"></span></h5>
-                <p class="card-text">
+                <h5 class="card-title text-center"><span th:text="${flight.arrivingAirport}"></span></h5>
+                <p class="card-text text-center">
                             Departing Airport :<span th:text="${flight.departingAirport}"></span><br/>
                             Arriving Airport :<span th:text="${flight.arrivingAirport}"></span><br/>
                             Price: <span th:text="${flight.price}"></span><br/>
