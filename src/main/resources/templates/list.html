@@ -31,7 +31,7 @@
                                 Flight Number: <span th:text="${flight.flightNumber}"></span><br/>
                                 Airline: <span th:text="${flight.airline}"></span><br/>
                             </p>
-                            <div class="row justify-content-center">
+                            <div class="text-center">
                             <a th:href="@{/update/{id}(id=${flight.id})}" class="btn btn-outline-secondary">Update</a>
                             <a th:href="@{/detail/{id}(id=${flight.id})}" class="btn btn-outline-secondary">Details</a>
                             <a th:href="@{/delete/{id}(id=${flight.id})}" class="btn btn-outline-secondary">Delete</a>
@@ -46,7 +46,7 @@
         </div>
     </div>
 </div>
-<div th:replace="base :: footerbar"></div>
+<div th:replace="base :: bottom"></div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
