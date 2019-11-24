@@ -9,8 +9,8 @@
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
+<div th:replace="base :: carousellist"></div>
 <div th:replace="base :: navlinks"></div>
-<div th:replace="base :: carousel"></div>
 <h1 id="h1font">All Flights</h1>
 <div th:each="flight : ${flights}">
     <div class="accordion" id="accordionExample">

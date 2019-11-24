@@ -1,4 +1,9 @@
+.carousel-inner{
+    width: auto;
+    height: 300px;
+    max-height: 225px;
 
+}
 
 .jumbotron {
     position: absolute;
@@ -37,6 +42,7 @@
     text-align: center;
     opacity:.75;
 }
+
 
 
 

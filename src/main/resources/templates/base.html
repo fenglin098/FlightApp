@@ -5,7 +5,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link ref="stylesheet" th:href="@{/static/css/style.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
 
@@ -26,10 +26,12 @@
     </div>
 </nav>
 
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" th:fragment="carousel">
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" th:fragment="carousellist">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="https://amadeus.com/images/en/air-transportation/airports/airport-terminal-aircrafts-at-dusk.jpg" class="d-block w-100" alt="...">
+            </div>
         </div>
         <div class="carousel-item">
             <img src="https://static.routesonline.com/images/cached/newsarticle-276905-scaled-580x0.jpg" class="d-block w-100" alt="...">
@@ -46,6 +48,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
+</div>
 </div>
 
 <footer th:fragment="bottom">
